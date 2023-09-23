@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta accountNumber="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank account</title>
+    <script src="Account.js"></script>
+</head>
+
+<body>
+    <script>
+        let account_number = 1414141
+        let account_holder = "john"
+        let balance = 234
+        let account_type = "silver"
+
+        let account = new bankAccount(account_number, account_holder, balance, account_type)
+
+        document.write(JSON.stringify(account))
+
+        account.setAccountNumber(parseInt(prompt("Enter account number")))
+        account.setAccountHolder(prompt("Enter account_holder"))
+        account.setBalance(parseInt(prompt("Enter balance")))
+        account.setAccountType(prompt("Enter account_type"))
+
+        document.write(JSON.stringify(account))
+    </script>
+</body>
+
+</html>

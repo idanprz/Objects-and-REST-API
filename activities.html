@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta id="viewport" content="width=device-width, initial-scale=1.0">
+    <title>activities</title>
+    <script>
+        class Post {
+            constructor(userId, id, title, body) {
+                this.userId = userId
+                this.id = id
+                this.title = title
+                this.body = body
+            }
+
+            setUserId(userId) {
+                if (!isNaN(userId) && userId > 0) {
+                    this.userId = userId
+                }
+            }
+            setId(id) {
+                if (!isNaN(id) && id > 0) {
+                    this.id = id
+                }
+            }
+            setTitle(title) {
+                if ('string' === typeof (title) && title.length > 0) {
+                    this.title = title
+                }
+            }
+            setBody(body) {
+                if ('string' === typeof (body) && body.length > 0) {
+                    this.body = body
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        const new_post = new Post(0, "", "", "")
+
+        fetch("https://www.boredapi.com/api/activity")
+            .then(response => response.json())
+            .then(posts => {
+                console.log(JSON.stringify(posts));
+
+                new_post.setUserId(posts.userId)
+                new_post.setId(posts.id)
+                new_post.setTitle(posts.title)
+                new_post.setBody(posts.body)
+                document.write(JSON.stringify(new_post))
+            })
+    </script>
+</body>
+
+</html>

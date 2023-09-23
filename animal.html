@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta common_name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal</title>
+    <script src="Animal.js"></script>
+</head>
+
+<body>
+    <script>
+        let common_name = "cat"
+        let color = "grey"
+        let life_expectancy = 20
+        let activity_time = "night"
+
+        let animal = new Animal(common_name, color, life_expectancy, activity_time)
+
+        document.write(JSON.stringify(animal))
+
+        animal.setCommonName(prompt("Enter common name"))
+        animal.setColor(prompt("Enter color"))
+        animal.setLifeExpectancy(parseInt(prompt("Enter life expectancy")))
+        animal.setActivityTime(prompt("Enter activity time"))
+
+        document.write(JSON.stringify(animal))
+    </script>
+</body>
+
+</html>

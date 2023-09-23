@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile phone</title>
+    <script src="mobilePhone.js"></script>
+</head>
+
+<body>
+    <script>
+        let brand = "iphone"
+        let model = 11
+        let screen_size = 2
+        let storage_capacity = 12
+        
+        let phone = new MobilePhone(brand, model, screen_size, storage_capacity)
+
+        document.write(JSON.stringify(phone))
+
+        phone.setBrand(prompt("Enter brand"))
+        phone.setModel(prompt("Enter model"))
+        phone.setScreenSize(parseInt(prompt("Enter screen size")))
+        phone.setStorageCapacity(parseInt(prompt("Enter storage capacity")))
+
+        document.write(JSON.stringify(phone))
+    </script>
+</body>
+
+</html>

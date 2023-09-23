@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta id="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+    <script src="Post.js"></script>
+</head>
+
+<body>
+    <script>
+        const new_post = new Post(0, "", "", "")
+
+        fetch("https://jsonplaceholder.typicode.com/posts/1")
+            .then(response => response.json())
+            .then(posts => {
+                console.log(JSON.stringify(posts));
+
+                new_post.setUserId(posts.userId)
+                new_post.setId(posts.id)
+                new_post.setTitle(posts.title)
+                new_post.setBody(posts.body)
+                document.write(JSON.stringify(new_post))
+            })
+    </script>
+</body>
+
+</html>
