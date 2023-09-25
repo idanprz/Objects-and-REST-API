@@ -10,12 +10,7 @@
 
 <body>
     <script>
-        let common_name = "cat"
-        let color = "grey"
-        let life_expectancy = 20
-        let activity_time = "night"
-
-        let animal = new Animal(common_name, color, life_expectancy, activity_time)
+        const animal = new Animal("cat", "grey", 20, "night")
 
         document.write(JSON.stringify(animal))
 
@@ -26,6 +21,8 @@
 
         document.write(JSON.stringify(animal))
     </script>
+    <br/>
+    <a href="index.html">Back to index</a>
 </body>
 
 </html>

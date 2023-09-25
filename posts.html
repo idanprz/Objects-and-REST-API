@@ -9,8 +9,9 @@
 </head>
 
 <body>
+    <div id="textElement"></div>
     <script>
-        const new_post = new Post(0, "", "", "")
+        const new_post = new Post()
 
         fetch("https://jsonplaceholder.typicode.com/posts/1")
             .then(response => response.json())
@@ -21,9 +22,12 @@
                 new_post.setId(posts.id)
                 new_post.setTitle(posts.title)
                 new_post.setBody(posts.body)
-                document.write(JSON.stringify(new_post))
+                document.getElementById("textElement").innerHTML =
+                    JSON.stringify(new_post)
             })
     </script>
+    <br />
+    <a href="index.html">Back to index</a>
 </body>
 
 </html>

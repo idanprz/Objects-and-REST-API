@@ -9,8 +9,9 @@
 </head>
 
 <body>
+    <div id="textElement"></div>
     <script>
-        const new_user = new User(0, "", "", "")
+        const new_user = new User()
 
         fetch("https://jsonplaceholder.typicode.com/users/1")
             .then(response => response.json())
@@ -21,9 +22,12 @@
                 new_user.setName(users.name)
                 new_user.setUsername(users.username)
                 new_user.setEmail(users.email)
-                document.write(JSON.stringify(new_user))
+                document.getElementById("textElement").innerHTML =
+                    JSON.stringify(new_user)
             })
     </script>
+    <br />
+    <a href="index.html">Back to index</a>
 </body>
 
 </html>

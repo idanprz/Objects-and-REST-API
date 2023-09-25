@@ -10,12 +10,7 @@
 
 <body>
     <script>
-        let brand = "iphone"
-        let model = 11
-        let screen_size = 2
-        let storage_capacity = 12
-        
-        let phone = new MobilePhone(brand, model, screen_size, storage_capacity)
+        const phone = new MobilePhone("iphone", 11, 2, 12)
 
         document.write(JSON.stringify(phone))
 
@@ -26,6 +21,8 @@
 
         document.write(JSON.stringify(phone))
     </script>
+    <br/>
+    <a href="index.html">Back to index</a>
 </body>
 
 </html>

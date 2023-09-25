@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <div id="textElement"></div>
     <script>
         const new_address = new Address()
 
@@ -19,9 +20,12 @@
                 new_address.setZipCode(parseInt(user.address.zip_code))
                 new_address.setCountry(user.address.country)
                 new_address.setCoordinates(user.address.coordinates)
-                document.write(JSON.stringify(new_address))
+                document.getElementById("textElement").innerHTML =
+                    JSON.stringify(new_address)
             })
     </script>
+    <br />
+    <a href="index.html">Back to index</a>
 </body>
 
 </html>

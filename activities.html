@@ -9,21 +9,25 @@
 </head>
 
 <body>
+    <div id="textElement"></div>
     <script>
-        const new_activity = new Activity(0, "", "", "")
+        const new_activity = new Activity()
 
         fetch("https://www.boredapi.com/api/activity")
             .then(response => response.json())
-            .then(posts => {
-                console.log(JSON.stringify(posts));
+            .then(activities => {
+                console.log(JSON.stringify(activities));
 
-                new_activity.setActivity(posts.activity)
-                new_activity.setType(posts.type)
-                new_activity.setParticipants(parseInt(posts.participants))
-                new_activity.setPrice(parseInt(posts.price))
-                document.write(JSON.stringify(new_activity))
+                new_activity.setActivity(activities.activity)
+                new_activity.setType(activities.type)
+                new_activity.setParticipants(parseInt(activities.participants))
+                new_activity.setPrice(parseInt(activities.price))
+                document.getElementById("textElement").innerHTML =
+                    JSON.stringify(new_activity)
             })
     </script>
+    <br />
+    <a href="index.html">Back to index</a>
 </body>
 
 </html>
