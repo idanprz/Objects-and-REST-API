@@ -5,53 +5,21 @@
     <meta charset="UTF-8">
     <meta id="viewport" content="width=device-width, initial-scale=1.0">
     <title>address</title>
-    <script>
-        class Address {
-            constructor(city, zip_code, country, coordinates) {
-                this.city = city
-                this.zip_code = zip_code
-                this.country = country
-                this.coordinates = coordinates
-            }
-
-            setCity(city) {
-                if ('string' === typeof(city) && city.length > 0) {
-                    this.city = city
-                }
-            }
-            setZipCode(zip_code) {
-                if (!isNaN(zip_code) && zip_code > 0) {
-                    this.zip_code = zip_code
-                }
-            }
-            setCountry(country) {
-                if ('string' === typeof(country) && country.length > 0) {
-                    this.country = country
-                }
-            }
-            setCoordinates(coordinates) {
-                if ('string' === typeof(coordinates) && coordinates.length > 0) {
-                    this.coordinates = coordinates
-                }
-            }
-        }
-    </script>
+    <script src="Address.js"></script>
 </head>
 
 <body>
     <script>
-        const newAddress = new Address(0, "", "", "")
+        const new_address = new Address()
 
-        fetch("https://random-data-api.com/api/user/random_user")
+        fetch("https://random-data-api.com/api/users/random_user")
             .then(response => response.json())
             .then(user => {
-                console.log(JSON.stringify(user))
-
-                // newAddress.setCity(user.address.city)
-                // newAddress.setZipCode(user.address.zip_code)
-                // newAddress.setCountry(parseInt(user.address.country))
-                // newAddress.setCoordinates(parseInt(user.address.coordinates))
-                // document.write(JSON.stringify(newAddress))
+                new_address.setCity(user.address.city)
+                new_address.setZipCode(parseInt(user.address.zip_code))
+                new_address.setCountry(user.address.country)
+                new_address.setCoordinates(user.address.coordinates)
+                document.write(JSON.stringify(new_address))
             })
     </script>
 </body>
